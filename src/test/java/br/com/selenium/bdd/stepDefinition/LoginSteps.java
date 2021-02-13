@@ -1,28 +1,19 @@
 package br.com.selenium.bdd.stepDefinition;
 
 import br.com.selenium.bdd.pageObject.LoginPage;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.E;
+import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
 public class LoginSteps {
 	LoginPage samplePage = new LoginPage();
 
-	@Before("@TMJ")
-	public void setParametersTMJ(Scenario scenario) {
 
-	}
-
-	@Before
-	public void beforehook(Scenario scenario) throws Exception {
-
-	}
-
-	@After
-	public void updateResultTMJ(Scenario scenario) throws Exception {
-
+	
+	@Dado("que estou na pagina {string}")
+	public void que_estou_na_pagina(String url) {
+		samplePage.getDriver().get(url);
 	}
 
 	@Quando("preencho o campo usuario com o valor {string}")
@@ -30,19 +21,20 @@ public class LoginSteps {
 		samplePage.preencherUsuario(string);
 	}
 
-	@Quando("preencho o campo senha com o valor {string}")
+	@E("preencho o campo senha com o valor {string}")
 	public void preencho_o_campo_senha_com_o_valor(String string) {
 		samplePage.preencherSenha(string);
 	}
 
-	@Dado("que estou na pagina {string}")
-	public void queEstouNaPaginaDeLogin(String url) {
-		samplePage.getDriver().get(url);
+	@Entao("clico no botão {string}")
+	public void clico_no_botão(String nomeBotao) {
+		samplePage.clicarBotao(nomeBotao);
 	}
 
-	@Dado("clico no botão {string}")
-	public void clicoNoBotão(String nomeBotao) {
-		samplePage.clicarBotao(nomeBotao);
+	
+	@E("valido a mensagem e-mail invalido")
+	public void valido_a_mensagem_e_mail_invalido() {
+	   samplePage.validarMensagemDeErro();
 	}
 
 }
