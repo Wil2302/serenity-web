@@ -9,14 +9,14 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class LoginPage extends PageObject {
 	
-	@FindBy(name = "email")
+	@FindBy(xpath = "//span[contains(text(),'CPF ou CNPJ')]/../div/input")
 	private WebElementFacade cmpUsuario;
 	
-	@FindBy(name = "password")
+	@FindBy(xpath = "//span[contains(text(),'Senha')]/../div/input") 
 	private WebElementFacade cmpSenha;
 	
-	@FindBy(id = "btnEntrar")
-	private WebElementFacade btnLogin;
+	@FindBy(xpath = "//button[contains(text(),'ENTRAR')]")
+	private WebElementFacade btnEntrar;
 	
 	@FindBy(xpath = "//*[@id='boxPassword']/div/span[3]")
 	private WebElementFacade errorMensage;
@@ -32,12 +32,12 @@ public class LoginPage extends PageObject {
 	}
 
 	public void clicarBotao(String nomeBotao) {
-		clickOn(btnLogin);
+		clickOn(btnEntrar);
 	}
 	
-	public void validarMensagemDeErro() {
-		String mensage = errorMensage.getText();
-		Assert.assertEquals("Usuário ou senha inválidos.", mensage);
+	public void validarLoginComSucesso() {
+		//String mensage = errorMensage.getText();
+		//Assert.assertEquals("Usuário ou senha inválidos.", mensage);
 	}
 	
 

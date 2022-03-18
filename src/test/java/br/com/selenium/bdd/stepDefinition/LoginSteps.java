@@ -31,10 +31,4 @@ public class LoginSteps {
 		samplePage.clicarBotao(nomeBotao);
 	}
 
-	
-	@E("valido a mensagem e-mail invalido")
-	public void valido_a_mensagem_e_mail_invalido() {
-	   samplePage.validarMensagemDeErro();
-	}
-
 }

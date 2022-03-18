@@ -7,7 +7,7 @@ public class CriptografarSenhas {
     {
         System.out.println("Iniciando criptografia da senha informada");
         System.out.println("");
-        System.out.println(CryptoUtils.encryptBase64(args[0]));
+        System.out.println(CryptoUtils.encryptBase64(""));
         System.out.println("");
         System.out.println("Processo finalizado");
     }

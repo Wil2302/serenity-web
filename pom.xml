@@ -1,10 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.com.bvnet.selenium</groupId>
-	<artifactId>selenium-atfc-base-projeto-referencia</artifactId>
+	<groupId>br.com.selenium</groupId>
+	<artifactId>selenium-web-automation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -19,7 +17,7 @@
 		<!-- Dependencias Serenity -->
 		<serenity-cucumber5.version>2.2.5</serenity-cucumber5.version>
 		<serenity-maven-plugin.version>2.2.9</serenity-maven-plugin.version>
-		
+
 		<!-- Dependencias do Maven -->
 		<maven-release-plugin.version>3.0.0-M1</maven-release-plugin.version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -48,7 +46,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>${maven-release-plugin.version}</version>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -63,7 +61,7 @@
 				</executions>
 			</plugin>
 
- 			<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>${maven-failsafe-plugin.version}</version>
@@ -82,7 +80,7 @@
 					<reportsDirectory>
 					    ${project.build.directory}/failsafe-reports_${surefire.forkNumber}
 					</reportsDirectory>
-					
+
 					<parallel>methods</parallel>
 					<threadCount>1</threadCount>
 					<perCoreThreadCount>true</perCoreThreadCount>
@@ -96,7 +94,7 @@
 					</execution>
 				</executions>
 			</plugin>
- 
+
 			<plugin>
 				<!-- Serenity framework dependency -->
 				<groupId>net.serenity-bdd.maven.plugins</groupId>
@@ -116,7 +114,7 @@
 	</build>
 
 	<!-- Dependencias -->
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
@@ -125,20 +123,20 @@
 			<scope>test</scope>
 			<exclusions>
 				<!-- Remove Relatorio Serenity Padrão -->
-	        	<exclusion>
-		            <groupId>net.serenity-bdd</groupId>
-		            <artifactId>serenity-report-resources</artifactId>
-		        </exclusion>
-		    </exclusions>
+				<exclusion>
+					<groupId>net.serenity-bdd</groupId>
+					<artifactId>serenity-report-resources</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-		
+
 		<!-- Importa Relatorio mais atual -->
 		<dependency>
-		    <groupId>net.serenity-bdd</groupId>
-		    <artifactId>serenity-report-resources</artifactId>
-		    <version>2.2.9</version>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-report-resources</artifactId>
+			<version>2.2.9</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.java.dev.jna</groupId>
 			<artifactId>platform</artifactId>
