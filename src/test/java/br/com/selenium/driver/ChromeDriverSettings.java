@@ -30,7 +30,7 @@ public class ChromeDriverSettings {
 		 * SE FOR LINUX, DEFINIR CHROME DRIVER APENAS SE FOR EXECUÇÃO LOCAL
 		 */
 		if(prop.getProperty("driver.platform").toLowerCase().equals("windows")) {					
-			options.setBinary(new File (prop.getProperty("chrome.options.setBinary")));
+			//options.setBinary(new File (prop.getProperty("chrome.options.setBinary")));
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("chrome.driver"));
 		}
 		else if (!prop.getProperty("driver.type").toLowerCase().equals("remote"))
